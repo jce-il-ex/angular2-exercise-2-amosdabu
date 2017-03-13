@@ -1,14 +1,28 @@
 <!doctype html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="style.css">
   <meta charset="utf-8">
   <title>MyApp</title>
   <base href="/">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+
 <body>
-  <app-root>Loading..1 23.</app-root>
+  <div id="main" ng-app>  
+    <div class="menu">Menu bar with Angularjs</div>  
+    <nav class="{{active}}" ng-click="$event.preventDefault()">  
+        <a href="#" class="home" ng-click="active='home'">Home</a>  
+        <a href="#" class="Event" ng-click="active='Event'">Event</a>  
+        <a href="#" class="Admission" ng-click="active='Admission'">Admission</a>  
+        <a href="#" class="About" ng-click="active='About'">About</a>  
+        <a href="#" class="contact" ng-click="active='contact'">Contact</a>  
+    </nav>  
+    <p ng-hide="active">Please Select a menu item</p>  
+    <p ng-show="active">You Select :   
+        <b>{{active}}</b>  
+    </p>  
+</div> 
 </body>
 </html>
